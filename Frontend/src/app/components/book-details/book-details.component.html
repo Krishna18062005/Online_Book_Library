@@ -1,0 +1,30 @@
+<div *ngIf="book" class="book-details-card">
+  <mat-card>
+    <mat-card-title>{{ book.title }}</mat-card-title>
+    <mat-card-subtitle>By {{ book.author }}</mat-card-subtitle>
+    <mat-card-content>
+      <p><strong>Description:</strong> {{ book.description }}</p>
+      <p>
+        <strong>Availability:</strong>
+        {{ book.available ? "Available" : "Not Available" }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="!book.available"
+        [routerLink]="['/borrow', book.id]"
+      >
+        Borrow
+      </button>
+      <button mat-stroked-button color="accent" [routerLink]="['/books']">
+        Back to List
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div *ngIf="!book">
+  <p>Loading book details...</p>
+</div>

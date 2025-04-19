@@ -1,0 +1,180 @@
+/* General body styling */
+:root {
+  --primary-color: #3498db; /* Blue */
+  --secondary-color: #2ecc71; /* Green */
+  --accent-color: #f39c12; /* Orange */
+  --danger-color: #e74c3c; /* Red */
+  --bg-color: #f8f9fa; /* Light gray background */
+  --card-bg-color: #ffffff; /* White card background */
+  --text-color: #343a40; /* Dark gray text */
+  --subtext-color: #6c757d; /* Light gray text */
+  --border-color: #dee2e6; /* Border color */
+  --hover-color: #0056b3; /* Darker blue for hover effects */
+  --success-color: #28a745; /* Green for success */
+  --warning-color: #ffc107; /* Yellow for warnings */
+  --info-color: #17a2b8; /* Cyan for info */
+  --dark-color: #343a40; /* Dark gray */
+  --light-color: #f8f9fa; /* Light gray */
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Box shadow */
+  --transition: all 0.3s ease; /* Transition effect */
+}
+
+html, body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+/* Container for centering content */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 20px;
+  padding-top: 20px;
+}
+
+/* Basic link styling */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+
+/* Basic button styling */
+.btn {
+  display: inline-block;
+  background: var(--primary-color);
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background: var(--hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Card styling */
+.card {
+  background: var(--card-bg-color);
+  color: var(--text-color);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  padding: 25px;
+  margin-bottom: 25px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Basic form input styling */
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: var(--card-bg-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='password']:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Additional styling for headers */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dark-color);
+  margin-bottom: 15px;
+}
+
+/* Table styling if needed */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+table th {
+  background-color: var(--light-color);
+  font-weight: 600;
+}
+
+table tr:hover {
+  background-color: var(--light-color);
+}
+
+/* Alert component styling */
+.alert {
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.alert-info {
+  background-color: #d1ecf1;
+  border: 1px solid #bee5eb;
+  color: #0c5460;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}

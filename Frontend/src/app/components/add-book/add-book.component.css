@@ -1,0 +1,250 @@
+.book-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.book-card {
+  background: linear-gradient(135deg, #ffffff, #f7f7f7);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+mat-card-title {
+  font-size: 25px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
+
+mat-card-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background-color: #3498db;
+  opacity: 0.8;
+}
+
+mat-card-subtitle {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+mat-card-content {
+  padding: 12px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  padding: 0 16px 16px;
+  gap: 12px;
+}
+
+/* General button style - kept for book card buttons */
+.book-card button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  background-color: #016506; /* Specific color for book card buttons */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 12px;
+}
+
+.book-card button:hover {
+  background-color: #2980b9; /* Hover color for book card buttons */
+  transform: scale(1.05);
+}
+
+/* --- Add Book Form Enhancements --- */
+
+.add-book-form {
+  grid-column: 1 / -1;
+  margin-bottom: 40px; /* Increased margin */
+  background: linear-gradient(145deg, #eef2f3, #ffffff); /* Subtle gradient background */
+  border-radius: 16px; /* Slightly larger radius */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12); /* Softer shadow */
+  padding: 32px; /* Increased padding */
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.5s ease-out;
+  border-left: 5px solid #016506; /* Accent border */
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px); /* Slightly increased slide */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.add-book-form h2 {
+  margin-bottom: 24px; /* Increased spacing */
+  color: #1a5276; /* Darker blue color */
+  text-align: center;
+  font-size: 24px; /* Slightly larger font */
+  font-weight: 700; /* Bolder */
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Underline effect for the title */
+.add-book-form h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #016506; /* Match accent color */
+    border-radius: 2px;
+}
+
+
+.form-group {
+  margin-bottom: 20px; /* Increased spacing */
+  position: relative; /* Needed for potential icon positioning */
+}
+
+.availability-group {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 8px; /* Align better with other inputs */
+}
+
+.availability-group label {
+  margin-right: 15px; /* Increased spacing */
+  align-self: center;
+  font-weight: 500;
+  color: #34495e; /* Slightly darker label color */
+}
+
+.form-group label {
+  display: block; /* Make label take full width */
+  margin-bottom: 8px;
+  font-weight: 600; /* Bolder label */
+  color: #34495e;
+  font-size: 15px; /* Slightly larger label font */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px; /* Increased padding */
+  border: 1px solid #bdc3c7; /* Softer border color */
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+  background-color: #fdfefe; /* Slightly off-white background */
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #016506; /* Match accent color on focus */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(1, 101, 6, 0.15); /* Subtle glow effect */
+}
+
+.form-group textarea {
+  min-height: 120px; /* Slightly taller textarea */
+  resize: vertical;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between; /* Keep space between */
+  align-items: center; /* Vertically align buttons */
+  margin-top: 24px; /* Increased top margin */
+  gap: 16px; /* Add gap between buttons if they wrap */
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+/* Base style for form buttons */
+.form-button {
+  padding: 12px 25px; /* Increased padding */
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px; /* Slightly larger font */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 0.5px; /* Add letter spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.form-button:hover {
+  transform: translateY(-2px) scale(1.03); /* Enhanced hover effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.add-book-button {
+  background: linear-gradient(45deg, #016506, #018008); /* Green gradient */
+}
+
+.add-book-button:hover {
+  background: linear-gradient(45deg, #018008, #029b0a); /* Lighter green gradient on hover */
+}
+
+.view-borrowed-button {
+  background: linear-gradient(45deg, #3498db, #5dade2); /* Blue gradient */
+}
+
+.view-borrowed-button:hover {
+  background: linear-gradient(45deg, #5dade2, #85c1e9); /* Lighter blue gradient on hover */
+}
+
+/* Ensure checkbox is aligned */
+.availability-group input[type="checkbox"] {
+    width: auto; /* Override default width */
+    margin-right: 8px; /* Space between checkbox and label */
+    transform: scale(1.2); /* Make checkbox slightly larger */
+    accent-color: #016506; /* Style checkbox color */
+}

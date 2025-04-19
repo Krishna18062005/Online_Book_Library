@@ -1,0 +1,80 @@
+h1 {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: slideDown 0.8s ease-out, gradientShine 5s linear infinite;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.borrowed-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 24px;
+}
+
+h2 {
+  font-size: 30px;
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 24px;
+}
+
+.no-books {
+  text-align: center;
+  color: var(--subtext-color);
+  font-size: 18px;
+  padding: 40px;
+}
+
+.borrowed-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.borrowed-card {
+  background-color: var(--card-bg-color);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  padding: 16px;
+}
+
+mat-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+mat-card-subtitle {
+  font-size: 16px;
+  color: var(--subtext-color);
+  margin-bottom: 16px;
+}
+
+mat-card-content {
+  padding: 12px 0;
+}

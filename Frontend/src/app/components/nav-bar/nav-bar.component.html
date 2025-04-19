@@ -1,0 +1,10 @@
+<mat-toolbar color="primary" class="navbar">
+  <span>Online Book Library</span>
+  <span class="spacer"></span>
+  <ng-container *ngFor="let navItem of navItems">
+    <button mat-button [routerLink]="navItem.route">
+      <mat-icon>{{ navItem.icon }}</mat-icon>
+      {{ navItem.label }}
+    </button>
+  </ng-container>
+</mat-toolbar>

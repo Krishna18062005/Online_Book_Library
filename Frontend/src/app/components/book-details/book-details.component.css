@@ -1,0 +1,85 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.book-details-card {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+mat-card-title {
+  font-size: 40px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+mat-card-subtitle {
+  font-size: 20px;
+  color: #7f8c8d;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+mat-card-content {
+  padding: 16px 0;
+}
+
+mat-card-content p {
+  margin: 12px 0;
+  line-height: 1.9;
+  text-align: center;
+  font-size: 16px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+mat-card-actions button {
+  min-width: 120px;
+}
+
+button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button.mat-raised-button {
+  background-color: #3498db;
+  color: white;
+}
+
+button.mat-stroked-button {
+  background-color: white;
+  color: #e74c3c;
+  border: 2px solid #e74c3c;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+  font-size: 18px;
+}
