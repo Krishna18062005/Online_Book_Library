@@ -1,0 +1,29 @@
+<h1>Borrowed Book List</h1>
+<div class="borrowed-container">
+  <div *ngIf="borrowedBooks.length === 0" class="no-books">
+    No books have been borrowed yet.
+  </div>
+  <div class="borrowed-list" *ngIf="borrowedBooks.length > 0">
+    <mat-card class="borrowed-card" *ngFor="let book of borrowedBooks">
+      <mat-card-title>{{ book.title }}</mat-card-title>
+      <mat-card-content>
+        <h3>
+          Borrowed by: <b>{{ book.borrower }}</b>
+        </h3>
+        <p>Title: {{ book.title }}</p>
+        <p>Description: {{ book.description }}</p>
+        <p>Author: {{ book.author }}</p>
+        <p>Borrowed Date: {{ book.borrowed_date | date : "medium" }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-stroked-button
+          color="warn"
+          (click)="deleteBorrowedBook(book.id)"
+        >
+          Return
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

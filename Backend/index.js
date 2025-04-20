@@ -72,7 +72,7 @@ app.post("/api/borrow/:id", async (req, res) => {
     return res.status(400).json({ error: "Book not available" });
   }
 
-  await pool.query("UPDATE books SET available = false WHERE id = ?", [id]);
+  await pool.query("UPDATE books SET available = available-1 WHERE id = ?", [id]);
   await pool.query(
     "INSERT INTO borrowed_books (book_id, borrower, borrowed_date) VALUES (?, ?, NOW())",
     [id, borrower]
@@ -91,7 +91,7 @@ app.delete("/api/borrowed/:id", async (req, res) => {
     return res.status(404).json({ error: "Borrowed book not found" });
   
   await pool.query(
-    "UPDATE books SET available = true WHERE id = (SELECT book_id FROM borrowed_books WHERE id = ?)",
+    "UPDATE books SET available = available+1 WHERE id = (SELECT book_id FROM borrowed_books WHERE id = ?)",
     [id]
   );
   await pool.query("DELETE FROM borrowed_books WHERE id = ?", [id]);

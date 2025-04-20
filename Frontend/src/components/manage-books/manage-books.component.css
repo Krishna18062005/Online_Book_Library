@@ -1,0 +1,261 @@
+h1 {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: slideDown 0.8s ease-out, gradientShine 5s linear infinite;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 3.2em;
+  font-weight: 700;
+  border-bottom: 4px solid;
+  border-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color)) 1;
+  padding-bottom: 20px;
+}
+
+p {
+  margin-bottom: 20px;
+  color: var(--subtext-color);
+  font-size: 1.15em;
+  animation: fadeIn 0.9s ease-out 0.4s backwards;
+  text-align: center;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Book List Grid */
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Book Card Styling */
+.book-card {
+  background-color: var(--card-bg-color);
+  border-radius: 12px;
+  border: solid 2px rgba(132, 132, 132, 0.274);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: transform var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card Title */
+mat-card-title {
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: center;
+  padding-top: 12px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+mat-card-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+/* Card Subtitle */
+mat-card-subtitle {
+  font-size: 14px;
+  color: var(--subtext-color);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* Card Content */
+mat-card-content {
+  padding: 12px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Card Actions */
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 16px 16px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 12px;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Edit Mode Form Styling */
+.book-card form {
+  padding: 24px;
+  background-color: var(--card-bg-color);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: white;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Button Row */
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  gap: 10px;
+}
+
+.button-row button {
+  flex: 1;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button-row button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2.5em;
+  }
+
+  .book-list {
+    padding: 20px;
+  }
+
+  mat-card-title {
+    font-size: 22px;
+  }
+
+  .book-card {
+    margin: 10px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px;
+  }
+
+  .button-row button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 2em;
+  }
+
+  .header p {
+    font-size: 1em;
+    max-width: 90%;
+  }
+
+  .book-list {
+    padding: 10px;
+  }
+
+  mat-card-title {
+    font-size: 18px;
+  }
+
+  .book-card {
+    margin: 8px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 12px;
+  }
+
+  .button-row button {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}

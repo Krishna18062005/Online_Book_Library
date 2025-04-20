@@ -1,0 +1,90 @@
+.navbar {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(10px); 
+  box-shadow: var(--navbar-shadow);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 1000; 
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.menu-button mat-icon {
+    font-size: 28px;
+    height: 28px;
+    width: 28px;
+    display: block;
+}
+
+.menu-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.desktop-nav-items {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+        order: -1;
+        margin-right: 8px;
+    }
+
+    .desktop-nav-items {
+        display: none;
+    }
+
+    .navbar-title {
+       flex-grow: 1;
+       text-align: center;
+    }
+}
+
+
+.light-theme .navbar {
+    background-color: #f8f8f8;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.light-theme .navbar button {
+    color: #333;
+}
+.light-theme .navbar mat-icon {
+    color: #333;
+}
+.light-theme .menu-button:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+
+.dark-theme .navbar {
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: #fff;
+    box-shadow: none;
+}
+.dark-theme .navbar button {
+    color: #fff;
+}
+.dark-theme .navbar mat-icon {
+    color: #fff;
+}
+.dark-theme .menu-button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}

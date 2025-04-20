@@ -1,0 +1,61 @@
+.borrow-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.error {
+  color: #e74c3c;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.borrow-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #016506;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.borrow-button:hover {
+  background-color: #0f611e;
+}
+
+.borrow-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}

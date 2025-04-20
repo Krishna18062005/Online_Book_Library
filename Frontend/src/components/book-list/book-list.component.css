@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+h1 {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: slideDown 0.8s ease-out, gradientShine 5s linear infinite;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 3.2em;
+  font-weight: 700;
+  border-bottom: 4px solid;
+  border-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color)) 1;
+  padding-bottom: 20px;
+}
+
+p {
+  margin-bottom: 20px;
+  color: var(--subtext-color);
+  font-size: 1.15em;
+  animation: fadeIn 0.9s ease-out 0.4s backwards;
+  text-align: center;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.book-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.book-card {
+  background-color: var(--card-bg-color);
+  border: solid 2px rgba(132, 132, 132, 0.274);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: transform var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+mat-card-title {
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 8px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
+
+mat-card-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+mat-card-subtitle {
+  font-size: 14px;
+  color: var(--subtext-color);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+mat-card-content {
+  padding: 12px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 16px 16px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 12px;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+.add-book-form {
+  grid-column: 1 / -1;
+  margin-bottom: 24px;
+  background-color: var(--card-bg-color);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-book-form h2 {
+  margin-bottom: 16px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.availability-group {
+  display: flex;
+  align-items: flex-start;
+}
+
+.availability-group label {
+  margin-right: 10px;
+  align-self: center;
+}
+
+.form-group label {
+  display: inline;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.add-book-button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  align-self: center;
+}
+
+.view-borrowed-button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  align-self: center;
+}
+
+.add-book-button:hover,
+.view-borrowed-button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Applying FadeIn Animation */
+.book-list {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2.5em;
+  }
+
+  .book-list {
+    padding: 20px;
+  }
+
+  mat-card-title {
+    font-size: 22px;
+  }
+
+  .book-card {
+    margin: 10px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px;
+  }
+
+  .button-row button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 2em;
+  }
+
+  .header p {
+    font-size: 1em;
+    max-width: 90%;
+  }
+
+  .book-list {
+    padding: 10px;
+  }
+
+  mat-card-title {
+    font-size: 18px;
+  }
+
+  .book-card {
+    margin: 8px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 12px;
+  }
+
+  .button-row button {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}

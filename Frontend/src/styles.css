@@ -24,7 +24,10 @@ html, body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: var(--bg-color);
+  border: solid 1px black;
+  /* background-color: var(--bg-color); */
+  
+  background-image: url('./assets/libimg.jpg');
   color: var(--text-color);
   min-height: 100vh;
 }

@@ -24,8 +24,26 @@ body {
 }
 
 .app-container {
-  padding: 20px;
+  padding-left: 180px;
+  padding-right: 180px;
+  padding-top: 20px;
+  margin-bottom: px;
   margin-top: 64px;
+  background-image: url('../assets/libimg.jpg');
+  background-size: cover;
+  z-index: 0;
+  height: 100vh;
+}
+.app-content{
+  background-color:rgba(240, 248, 255, 0.927) ;
+  z-index: -1;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  border: solid 2px rgba(92, 92, 92, 0.474);
+  border-radius: 20px;
+  box-shadow: 0 -2px -8px rgba(0, 0, 0, 0.5);
 }
 
 /* .navbar-links {
