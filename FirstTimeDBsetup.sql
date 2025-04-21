@@ -12,8 +12,8 @@ CREATE TABLE books (
 CREATE TABLE borrowed_books (
   id INT PRIMARY KEY AUTO_INCREMENT,
   book_id INT,
-  borrower_name VARCHAR(255) NOT NULL,
-  borrowed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  borrower VARCHAR(255) NOT NULL,
+  borrowed_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE
 );
 INSERT INTO books (title, author, description, available) VALUES 
