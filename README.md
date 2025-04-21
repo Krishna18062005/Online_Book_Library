@@ -102,8 +102,8 @@ CREATE TABLE books (
 CREATE TABLE borrowed_books (
   id INT PRIMARY KEY AUTO_INCREMENT,
   book_id INT,
-  borrower_name VARCHAR(255) NOT NULL,
-  borrowed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  borrower VARCHAR(255) NOT NULL,
+  borrowed_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE
 );
 INSERT INTO books (title, author, description, available) VALUES 
@@ -179,8 +179,8 @@ ng serve --open
 |---------------|--------------|-----------------------------------------|
 | id            | INT (PK)     | Auto-incrementing ID                    |
 | book_id       | INT (FK)     | References `books(id)`                 |
-| borrower_name | VARCHAR(255) | Name of the person borrowing the book  |
-| borrowed_at   | TIMESTAMP    | Time of borrowing                      |
+| borrower      | VARCHAR(255) | Name of the person borrowing the book  |
+| borrowed_date | TIMESTAMP    | Time of borrowing                      |
 
 
 ## 📬 Contact
