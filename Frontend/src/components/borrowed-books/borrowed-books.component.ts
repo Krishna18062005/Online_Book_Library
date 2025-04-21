@@ -23,7 +23,7 @@ export class BorrowedBooksComponent implements OnInit {
   }
 
   deleteBorrowedBook(id: number): void {
-    if (confirm('Are you sure you want to delete this borrowed book?')) {
+    if (confirm('Are you sure you want to return this borrowed book?')) {
       this.http.delete(`http://localhost:3000/api/borrowed/${id}`).subscribe(
         () => {
           this.borrowedBooks = this.borrowedBooks.filter(
