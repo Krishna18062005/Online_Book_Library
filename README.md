@@ -77,7 +77,7 @@ cd Backend
 # Install dependencies
 npm install
 
-# Create a `.env` file in the Backend folder and add:
+# Open `.env` file in the Backend folder and update:
 DB_HOST=localhost
 DB_USER=your_mysql_user
 DB_PASSWORD=your_mysql_password
@@ -182,13 +182,6 @@ ng serve --open
 | book_id       | INT (FK)     | References `books(id)`                 |
 | borrower_name | VARCHAR(255) | Name of the person borrowing the book  |
 | borrowed_at   | TIMESTAMP    | Time of borrowing                      |
-
----
-
-## 🤝 Contributions
-
-Feel free to fork and contribute! Pull requests are welcome.  
-Make sure to ⭐ the repo if you find it useful.
 
 
 ## 📬 Contact
