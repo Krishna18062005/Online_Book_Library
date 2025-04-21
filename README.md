@@ -44,10 +44,10 @@ Built using **Angular** for the frontend, **Node.js/Express** for the backend AP
 └── Frontend/               # Angular Application 🅰
     ├── src/
     │   ├── app/
-    │   │   ├── components/ # BookList, BookDetails, Borrow UI Components 🧩
-    │   │   ├── services/   # BookService for API calls 📡
     │   │   ├── app-routing.module.ts 🗺
     │   │   └── app.module.ts 🧱
+    │   ├── components/ # BookList, BookDetails, Borrow UI Components 🧩
+    │   ├── services/   # BookService for API calls 📡
     │   ├── assets/ 🖼
     │   ├── environments/ 🌍
     │   ├── index.html 📄
